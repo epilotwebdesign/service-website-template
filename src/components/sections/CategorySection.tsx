@@ -32,6 +32,18 @@ export default function CategorySection({ category, tinted }: Props) {
         >
           <h2 className="text-3xl sm:text-4xl text-[#2b2420] mb-4">{category.name}</h2>
           <p className="text-[#6f645a] leading-relaxed">{category.description}</p>
+          {category.highlights && category.highlights.length > 0 && (
+            <div className="flex flex-wrap justify-center gap-2 mt-5">
+              {category.highlights.map((highlight) => (
+                <span
+                  key={highlight}
+                  className="rounded-full border border-[#c98a92]/40 bg-[#c98a92]/10 px-4 py-1 text-xs sm:text-sm text-[#8a4a52]"
+                >
+                  {highlight}
+                </span>
+              ))}
+            </div>
+          )}
         </motion.div>
 
         {totalImages > 0 && (

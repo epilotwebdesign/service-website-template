@@ -2,6 +2,11 @@ import birthdayMartini1 from "../assets/martinis/birthday-martini-1.jpg";
 import bearMartiniWhite from "../assets/martinis/bear-martini-white.jpg";
 import birthdayMartiniRose from "../assets/martinis/birthday-martini-rose.jpg";
 import bearMartiniGreen from "../assets/martinis/bear-martini-green.jpg";
+import stallFavours from "../assets/event-hire/stall-favours.jpg";
+import halloweenBouquets from "../assets/event-hire/halloween-bouquets.jpg";
+import halloweenStall from "../assets/event-hire/halloween-stall.jpg";
+import stallOwner from "../assets/event-hire/stall-owner.jpg";
+import awardFinalist from "../assets/event-hire/award-finalist.jpg";
 
 export type Product = {
   name: string;
@@ -20,6 +25,8 @@ export type Category = {
   imagePlaceholders?: number;
   imageAspect?: string;
   priceOnEnquiry?: string;
+  highlights?: string[];
+  navLabel?: string;
 };
 
 export const categories: Category[] = [
@@ -119,5 +126,28 @@ export const categories: Category[] = [
     priceOnEnquiry: "Price on enquiry, depending on occasion and quantity.",
     images: [],
     imagePlaceholders: 5,
+  },
+  {
+    id: "seasonal",
+    name: "Seasonal",
+    description:
+      "Valentine's Day, Mother's Day, Easter, Halloween, Christmas and more — get in touch about what's available for the next occasion.",
+    products: [],
+    priceOnEnquiry: "Please contact for current seasonal collections and pricing.",
+    images: [halloweenBouquets],
+    imagePlaceholders: 2,
+  },
+  {
+    id: "event-hire",
+    name: "Hire Me For Your Event",
+    navLabel: "Event Hire",
+    description:
+      "Looking for something a little different for a hen party, birthday, corporate event or celebration? Book a candle-making workshop — tailored to your event, your theme and your ideas. Come with everything planned, or just an idea, and let's create something perfect together.",
+    products: [],
+    highlights: ["Hen Parties", "Birthdays", "Corporate Events", "Celebrations"],
+    notes: ["Ages 18+."],
+    priceOnEnquiry: "Prices are based on group size — enquire to discuss your event.",
+    images: [stallFavours, halloweenStall, stallOwner, awardFinalist],
+    imageAspect: "aspect-[3/2]",
   },
 ];
